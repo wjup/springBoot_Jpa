@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Seach</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.css}">
+</head>
+<body class="container">
+    <br>
+    <h1>Seach  <small>Search for what you think</small></h1>
+    <br>
+    <form class="form-inline" action="/seachAll" method="post">
+        <div class="form-group">
+            <input type="texwt" class="form-control"  name="userName" id="userName" placeholder="userName">
+        </div>
+        <div class="form-group">
+            &nbsp;or &nbsp;<input type="text" class="form-control"   name="phone" id="phone" placeholder="phone">
+        </div>
+        &nbsp;<button type="submit" class="btn btn-primary">Seach</button>
+        <!--<a role="button" class="btn btn-primary" th:href="@{'/seachAll/'+Tom}">Seach</a>-->
+    </form>
+    <br>
+    <table class="table table-striped">
+        <THEAD>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Password</th>
+            <th>Phone</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+        </THEAD>
+        <TBODY>
+        <tr th:each = "user:${seachAll}">
+            <td th:text="${user.userId}" ></td>
+            <td th:text="${user.userName}" ></td>
+            <td th:text="${user.password}" ></td>
+            <td th:text="${user.phone}" ></td>
+            <td ><a th:href="${'/edit/'+user.userId}">edit</a></td>
+            <td><a th:href="${'/del/'+user.userId}" >delete</a></td>
+        </tr>
+        </TBODY>
+    </table>
+    <a role="button" class="btn btn-success" href="/list">Index</a>
+</body>
+</html>

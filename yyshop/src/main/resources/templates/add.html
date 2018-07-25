@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add</title>
+    <link rel="stylesheet" href="/css/bootstrap.css">
+</head>
+<body class="container">
+    <br>
+    <h1>Add  <small>Please complete it.</small></h1>
+    <br>
+    <form action="/add" class="form-horizontal" method="post">
+        <div class="form-group">
+            <label for="userName" class="col-sm-1 control-label">Name</label>
+            <div class="col-sm-5">
+                <input class="form-control" type="text" id="userName" name="userName">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="password" class="col-sm-1 control-label">Password</label>
+            <div class="col-sm-5">
+                <input class="form-control" type="password" id="password" name="password">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="phone" class="col-sm-1 control-label">Phone</label>
+            <div class="col-sm-5">
+                <input class="form-control" type="number" id="phone" name="phone">
+            </div>
+        </div>
+        <div class="form-group">
+            <input class="btn btn-info" value="Submit" type="submit">
+            &nbsp;&nbsp;&nbsp;
+            <input class="btn btn-info" value="Reset" type="reset">
+            &nbsp;&nbsp;&nbsp;
+            <a class="btn btn-success" href="/list">Index</a>
+        </div>
+    </form>
+</body>
+</html>

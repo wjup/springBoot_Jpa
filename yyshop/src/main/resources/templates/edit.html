@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>edit</title>
+    <link rel="stylesheet" href="/css/bootstrap.css">
+</head>
+<body class="container">
+    <br>
+    <h1>Edit  <small>Please fill in the information for the change</small></h1>
+    <br>
+    <form action="/add" method="post"  class="form-horizontal">
+        <fieldset disabled>
+            <div class="form-group has-success has-feedback">
+                <label for="userId" class="col-sm-1 control-label">ID</label>
+                <div class="col-sm-5">
+                    <input type="text" th:value="${user.userId}"  placeholder="Disabled input" class="form-control" id="userId" aria-describedby="inputSuccess2Status">
+                    <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
+                    <span id="inputSuccess2Status" class="sr-only">(success)</span>
+                </div>
+            </div>
+        </fieldset>
+        <input type="text" name="userId" th:value="${user.userId}" style="display:none">
+        <div class="form-group">
+            <label for="userName" class="col-sm-1 control-label">Name</label>
+            <div class="col-sm-5">
+                <input id="userName" class="form-control" type="text" th:value="${user.userName}" name="userName">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="password" class="col-sm-1 control-label">password</label>
+            <div class="col-sm-5">
+                <input type="text" id="password" class="form-control" th:value="${user.password}" name="password">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="phone" class="col-sm-1 control-label">Phone</label>
+            <div class="col-sm-5">
+                <input id="phone" class="form-control" type="text" th:value="${user.phone}" name="phone">
+            </div>
+        </div>
+        <input type="submit" class="btn btn-info" value="OK">
+        &nbsp;&nbsp;&nbsp;
+        <a class="btn btn-info" th:href="${'/edit/'+user.userId}">Reset</a>
+        &nbsp;&nbsp;&nbsp;
+        <a class="btn btn-success" href="/list">Index</a>
+    </form>
+</body>
+</html>

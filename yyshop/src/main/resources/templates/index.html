@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>yyshop</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.css}">
+    <link rel="stylesheet" th:src="@{/js/jquery-3.1.1.min.js}">
+</head>
+<body class="container">
+<!--<img th:src="@{/img/bg.jpg}">-->
+    <br>
+    <h1>Information  <small>Student List</small></h1>
+    <br>
+    <div class="alert alert-danger  alert-dismissible" role="alert">
+        <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+        <span class="sr-only">Error:</span>
+        Paging function to be developed...
+    </div>
+    <br>
+    <div class="panel panel-default">
+        <div class="panel-heading">Student</div>
+        <table class="table table-striped">
+            <THEAD>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Password</th>
+                    <th>Phone</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </tr>
+            </THEAD>
+            <TBODY>
+                <tr th:each = "user:${all}">
+                    <td th:text="${user.userId}" ></td>
+                    <td th:text="${user.userName}" ></td>
+                    <td th:text="${user.password}" ></td>
+                    <td th:text="${user.phone}" ></td>
+                    <td ><a th:href="${'/edit/'+user.userId}">edit</a></td>
+                    <td><a th:href="${'/del/'+user.userId}" >delete</a></td>
+                </tr>
+            </TBODY>
+        </table>
+    </div>
+    <a class="btn btn-info" href="/toAdd" role="button">Add</a>
+    &nbsp;&nbsp;&nbsp;
+    <a class="btn btn-info" href="/seach" role="button">Seach</a>
+
+</body>
+</html>
