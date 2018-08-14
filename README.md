@@ -2,11 +2,11 @@
 
 ### 环境：
 
-* IDE：Intellij IDEA 2017
+* IDE: Intellij IDEA 2017
 * springboot: **2.0.1.RELEASE**
-* jdk：1.8.0_66
-* maven:3.5.3
-* mysql:5.1.53
+* jdk: 1.8.0_66
+* maven: 3.5.3
+* mysql: 5.1.53
 
 ### 持久层
 
