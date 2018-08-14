@@ -2,7 +2,7 @@
 
 ### 环境：
 
-* 开发工具：Intellij IDEA 2017
+* IDE：Intellij IDEA 2017
 * springboot: **2.0.1.RELEASE**
 * jdk：1.8.0_66
 * maven:3.5.3
